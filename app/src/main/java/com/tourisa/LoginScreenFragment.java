@@ -20,7 +20,6 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
-import com.facebook.Profile;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
@@ -40,6 +39,7 @@ public class LoginScreenFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         callbackManager = CallbackManager.Factory.create();
+
         facebookLoginButton = view.findViewById(R.id.facebook_login_draft_button);
         facebookLoginButton.setFragment(this);
         facebookLoginButton.setReadPermissions(Collections.singletonList(EMAIL));
@@ -87,8 +87,8 @@ public class LoginScreenFragment extends Fragment {
                 Log.e("onCompleted", email);
                 Log.e("onCompleted", image);
                 String profileID = null;
-                profileID = Profile.getCurrentProfile().getId();
-                Log.e("profile id", profileID);
+//                profileID = Profile.getCurrentProfile().getId();
+//                Log.e("profile id", profileID);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

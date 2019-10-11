@@ -12,7 +12,7 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -25,6 +25,8 @@ android {
         maven { url 'http://repo1.maven.org/maven2' }
         maven { url 'https://maven.fabric.io/public' }
         google()  // Google's Maven repository
+        maven {url 'http://developer.huawei.com/repo/'}
+
     }
 }
 
@@ -61,5 +63,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.facebook.android:facebook-android-sdk:5.8.0'
+    implementation 'com.huawei.android.hms:hwid:2.6.3.306'
+
 }
 apply plugin: 'com.google.gms.google-services'

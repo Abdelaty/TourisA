@@ -21,17 +21,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=101204635" />
 
         <activity
             android:name="com.huawei.hms.activity.BridgeActivity"
             android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
             android:excludeFromRecents="true"
+            android:exported="false"
             android:hardwareAccelerated="true"
             android:theme="@android:style/Theme.Translucent">
             <meta-data
                 android:name="hwc-theme"
                 android:value="androidhwext:style/Theme.Emui.Translucent" />
-
         </activity>
 
         <activity android:name=".MainActivity">
@@ -64,30 +67,12 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name="com.huawei.hms.update.provider.UpdateProvider"
+            android:authorities="com.tourisa.hms.update.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" />
     </application>
 
 </manifest>
-
-    <!-- 接入HMSSDK 需要注册的activity | Access HMSSDK activity to be registered-->
-
-
-    <!-- 接入HMSSDK 需要注册的activity | Access HMSSDK activity to be registered-->
-
-    <!-- 接入HMSSDK 游戏需要注册的activity | Activity to register when accessing HMSSDK game module using hmsagent code-->
-
-
-    <!-- 接入HMSSDK PUSH模块需要注册，第三方相关 :接收Push消息（注册、透传消息、通知栏点击事件）广播，
-            此receiver类需要开发者自己创建并继承com.huawei.hms.support.api.push.PushReceiver类，
-            参考示例代码中的类：com.huawei.hmsagent.HuaweiPushRevicer
-    com.tourisa 要替换上您应用的包名-->
-
-    <!--如下2个通知会在以后的版本中逐渐废弃
-        接入HMSSDK PUSH模块需要注册，第三方相关 :接收Push消息（点击通知栏或通知栏上的按钮后触发onEvent回调、查看push通道是否连接）广播，
-            此receiver类需要开发者自己创建并继承com.huawei.hms.support.api.push.PushReceiver类，
-            参考示例代码中的类：com.huawei.hmsagent.HuaweiPushRevicer
-    com.tourisa 要替换上您应用的包名-->
-
-    <!--接入HMSSDK PUSH模块需要注册该service，不需要开发者处理-->
-
-
-    <!-- 接入HMSSDK 需要注册的应用下载服务 | Access HMSSDK need to register app download service-->
