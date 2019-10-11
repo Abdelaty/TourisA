@@ -18,20 +18,12 @@ public class MainLoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main_login, container, false);
         Button loginBtn = view.findViewById(R.id.login_btn);
         Button signupBtn = view.findViewById(R.id.signup_btn);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new LoginScreenFragment());
-            }
-        });
-        signupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadFragment(new SignupScreenFragment());
-            }
-        });
+        loginBtn.setOnClickListener(v -> loadFragment(new LoginScreenFragment()));
+        signupBtn.setOnClickListener(v -> loadFragment(new SignupScreenFragment()));
 //        loginBtn.setOnClickListener(view1 -> loadFragment(new LoginScreenFragment()));
 //        signupBtn.setOnClickListener(view1 -> loadFragment(new SignupScreenFragment()));
+
+
         return view;
     }
 

@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentTransaction;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MainActivity extends AppCompatActivity {
+public class WeclomeActivity extends AppCompatActivity {
 
 
     public static void printHashKey(Context pContext) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //dit this
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.welcome);
         printHashKey(this);
         loadFragment(new MainLoginFragment());
 

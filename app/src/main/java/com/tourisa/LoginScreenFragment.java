@@ -24,6 +24,7 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.huawei.android.hms.agent.HMSAgent;
 
 import org.json.JSONException;
 
@@ -34,22 +35,19 @@ public class LoginScreenFragment extends Fragment {
     private static final String EMAIL = "email";
     private LoginButton facebookLoginButton;
     private CallbackManager callbackManager;
+    private ImageView huaweiLoginButton;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         callbackManager = CallbackManager.Factory.create();
-
+        huaweiLoginButton = view.findViewById(R.id.huawi_login_btn);
+        huaweiLoginButton.setOnClickListener(v -> huaweiConnect());
         facebookLoginButton = view.findViewById(R.id.facebook_login_draft_button);
         facebookLoginButton.setFragment(this);
         facebookLoginButton.setReadPermissions(Collections.singletonList(EMAIL));
         ImageView loginButton = view.findViewById(R.id.facebook_login_button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                facebookLoginButton.performClick();
-            }
-        });
+        loginButton.setOnClickListener(v -> facebookLoginButton.performClick());
         FacebookSdk.sdkInitialize(Objects.requireNonNull(getActivity()).getApplication());
         AppEventsLogger.activateApp(getActivity().getApplication());
         facebookLoginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
@@ -73,7 +71,27 @@ public class LoginScreenFragment extends Fragment {
                 Log.e("onError", exception.getMessage());
             }
         });
+        HMSAgent.init(getActivity());
+        HMSAgent.connect(getActivity(), rst -> Log.e("HMS connect end:", String.valueOf(rst)));
+
+
         return view;
+    }
+
+    private void huaweiConnect() {
+        HMSAgent.connect(getActivity(), rst -> Log.e("HMS connect end:", String.valueOf(rst)));
+        HMSAgent.Hwid.signIn(true, (rtnCode, signInResult) -> {
+            if (rtnCode == HMSAgent.AgentResultCode.HMSAGENT_SUCCESS && signInResult != null) {
+                Log.e("success=========", "");
+                Log.e("nickname:", signInResult.getDisplayName());
+                Log.e("openid:", signInResult.getOpenId());
+                Log.e("accessToken:", signInResult.getAccessToken());
+                Log.e("photourl:", signInResult.getPhotoUrl());
+            } else {
+                Log.e("error: ", String.valueOf(rtnCode));
+            }
+        });
+
     }
 
     private void useLoginInformation(AccessToken accessToken) {

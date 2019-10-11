@@ -110,7 +110,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <ImageView
-        android:id="@+id/huawi_btn"
+        android:id="@+id/huawi_login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -142,4 +142,5 @@
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/google." />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,11 @@
             Format android:value= "appid=xxxxxx"-->
         <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=101204635" />
 
+        <!-- 接入HMSSDK 游戏或支付时需要注册的cpid参数。value的值中“${CPID}”用实际申请的应用cpID替换，来源于开发者联盟网站应用的权益详情。
+            格式 android:value="cpid=xxxxxx"
+            Cpid parameters that need to be registered to access HMSSDK games or payments. Value "${CPID}" is replaced with the application Cpid of the actual application, from the Developer affiliate website application.
+            Format android:value="cpid=xxxxxx"-->
+        <meta-data android:name="com.huawei.hms.client.cpid" android:value="cpid=${CPID}" />
 
         <!-- 接入HMSSDK 需要注册的provider，authorities 一定不能与其他应用一样，所以这边 com.tourisa 要替换上您应用的包名
             Access HMSSDK need to register provider,authorities must not be the same as other applications, so this side ${package_name} to replace the package name you applied-->
@@ -54,6 +59,23 @@
                 android:value="androidhwext:style/Theme.Emui.Translucent" />
         </activity>
 
+        <!-- 使用 HMSAgent 代码接入HMSSDK 游戏或支付模块时需要注册的activity | Activity to register when accessing HMSSDK game or payment module using hmsagent code-->
+        <activity android:name="com.huawei.android.hms.agent.pay.HMSPayAgentActivity"
+            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
+            android:excludeFromRecents="true" android:exported="false"
+            android:hardwareAccelerated="true" android:theme="@android:style/Theme.Translucent">
+            <meta-data android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent" />
+        </activity>
+
+        <!-- 使用 HMSAgent 代码接入HMSSDK 游戏或支付模块时需要注册的activity | Activity to register when accessing HMSSDK game or payment module using hmsagent code-->
+        <activity android:name="com.huawei.android.hms.agent.pay.HMSPMSPayAgentActivity"
+            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
+            android:excludeFromRecents="true" android:exported="false"
+            android:hardwareAccelerated="true" android:theme="@android:style/Theme.Translucent">
+            <meta-data android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent" />
+        </activity>
 
         <!-- 使用 HMSAgent 代码接入HMSSDK 帐号模块时需要注册的activity | Activity to register when accessing HMSSDK account module using hmsagent code-->
         <activity android:name="com.huawei.android.hms.agent.hwid.HMSSignInAgentActivity"

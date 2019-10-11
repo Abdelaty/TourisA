@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_big">24sp</dimen>
+    <dimen name="text_big_x">24sp</dimen>
+    <dimen name="text_big_x_">26sp</dimen>
+    <dimen name="card_corner">10dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="text_normal_x">18sp</dimen>
+    <dimen name="text_normal">16sp</dimen>
+    <dimen name="text_small_x">14sp</dimen>
+    <dimen name="actionBarSize">67dp</dimen>
+</resources>

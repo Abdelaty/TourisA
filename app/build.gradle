@@ -1,9 +1,10 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.tourisa"
+        applicationId 'com.tourisa'
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -12,19 +13,22 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-    compileOptions {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
     }
     repositories {
         maven { url 'https://jitpack.io' }
         maven { url 'http://repo1.maven.org/maven2' }
         maven { url 'https://maven.fabric.io/public' }
         google()  // Google's Maven repository
+        maven {url 'http://developer.huawei.com/repo/'}
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -41,10 +45,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'com.justkiddingbaby:vercodeedittext:1.1.0'
     implementation 'org.glassfish:javax.annotation:10.0-b28'
-    implementation 'com.squareup.okhttp3:okhttp:3.14.2'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.fxn769:pix:1.4.4'
     implementation 'com.github.yukuku:ambilwarna:2.0.1'
@@ -61,5 +65,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.facebook.android:facebook-android-sdk:5.8.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

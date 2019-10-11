@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">TourisA</string>
-    <string name="facebook_app_id">386506008687192</string>
-    <string name="fb_login_protocol_scheme">fb386506008687192</string>
+    <string name="app_name" translatable="false">TourisA</string>
+    <string name="facebook_app_id" translatable="false">386506008687192</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb386506008687192</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="recommended" translatable="false">Recommended</string>
+    <string name="top_rated_locals" translatable="false">Top Rated locals</string>
+    <string name="find_a_local" translatable="false">Find a local</string>
+    <string name="search" translatable="false">Search</string>
 </resources>
