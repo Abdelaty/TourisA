@@ -13,6 +13,7 @@
         <item name="android:radius">17dp</item>
 
     </style>
+
     <style name="Theme.Transparent" parent="AppTheme">
         <item name="android:windowIsTranslucent">true</item>
     </style>
