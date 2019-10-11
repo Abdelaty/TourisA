@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());
                 String hashKey = new String(Base64.encode(md.digest(), 0));
-                Log.i("fac", "printHashKey() Hash Key: " + hashKey);
+                Log.e("fac", "printHashKey() Hash Key: " + hashKey);
             }
         } catch (NoSuchAlgorithmException e) {
             Log.e("fac", "printHashKey()", e);

@@ -28,30 +28,30 @@ import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONException;
 
-import java.util.Arrays;
+import java.util.Collections;
+import java.util.Objects;
 
 public class LoginScreenFragment extends Fragment {
     private static final String EMAIL = "email";
-    LoginButton facebookLoginButton;
-    CallbackManager callbackManager;
-    private ImageView loginButton;
+    private LoginButton facebookLoginButton;
+    private CallbackManager callbackManager;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         callbackManager = CallbackManager.Factory.create();
-        FacebookSdk.sdkInitialize(getActivity().getApplication());
-        AppEventsLogger.activateApp(getActivity().getApplication());
         facebookLoginButton = view.findViewById(R.id.facebook_login_draft_button);
         facebookLoginButton.setFragment(this);
-        loginButton = view.findViewById(R.id.facebook_login_button);
+        facebookLoginButton.setReadPermissions(Collections.singletonList(EMAIL));
+        ImageView loginButton = view.findViewById(R.id.facebook_login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 facebookLoginButton.performClick();
             }
         });
-        facebookLoginButton.setReadPermissions(Arrays.asList(EMAIL));
+        FacebookSdk.sdkInitialize(Objects.requireNonNull(getActivity()).getApplication());
+        AppEventsLogger.activateApp(getActivity().getApplication());
         facebookLoginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -70,7 +70,7 @@ public class LoginScreenFragment extends Fragment {
 
             @Override
             public void onError(FacebookException exception) {
-                Log.e("onSuccess", exception.getMessage());
+                Log.e("onError", exception.getMessage());
             }
         });
         return view;
