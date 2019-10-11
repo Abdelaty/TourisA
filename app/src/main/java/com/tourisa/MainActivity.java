@@ -1,8 +1,10 @@
-package com.example.tourisa;
+package com.tourisa;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.tourisa.R;
 
 public class MainActivity extends AppCompatActivity {
 

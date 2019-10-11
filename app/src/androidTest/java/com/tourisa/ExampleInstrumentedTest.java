@@ -1,4 +1,4 @@
-package com.example.tourisa;
+package com.tourisa;
 
 import android.content.Context;
 
