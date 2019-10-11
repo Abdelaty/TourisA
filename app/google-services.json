@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "776159713657",
+    "firebase_url": "https://tourisa-f3506.firebaseio.com",
+    "project_id": "tourisa-f3506",
+    "storage_bucket": "tourisa-f3506.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776159713657:android:b6b2e6aa91373e1a89b7a8",
+        "android_client_info": {
+          "package_name": "com.tourisa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776159713657-b4r92fie260fe4kq515rslmllqh7fofi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tourisa",
+            "certificate_hash": "0df3ebb37fc5d4cdad9c631158f80ba07c9ef7aa"
+          }
+        },
+        {
+          "client_id": "776159713657-rgpk1kbr6a80rb4879nk46o4lg5a7ja1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEDowfHVBRCLyEASSJ2sGNu1ey4IIMdNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776159713657-rgpk1kbr6a80rb4879nk46o4lg5a7ja1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

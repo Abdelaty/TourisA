@@ -43,6 +43,7 @@ public class LoginScreenFragment extends Fragment {
         FacebookSdk.sdkInitialize(getActivity().getApplication());
         AppEventsLogger.activateApp(getActivity().getApplication());
         facebookLoginButton = view.findViewById(R.id.facebook_login_draft_button);
+        facebookLoginButton.setFragment(this);
         loginButton = view.findViewById(R.id.facebook_login_button);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
