@@ -2,4 +2,9 @@
     <string name="app_name">TourisA</string>
     <string name="facebook_app_id">386506008687192</string>
     <string name="fb_login_protocol_scheme">fb386506008687192</string>
+    <string name="home">Home</string>
+    <string name="recommended">Recommended</string>
+    <string name="top_rated_locals">Top Rated locals</string>
+    <string name="find_a_local">Find a local</string>
+    <string name="search">Search</string>
 </resources>

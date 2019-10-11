@@ -1,9 +1,10 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.tourisa"
+        applicationId 'com.tourisa'
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -16,10 +17,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
-    }
     repositories {
         maven { url 'https://jitpack.io' }
         maven { url 'http://repo1.maven.org/maven2' }
@@ -27,6 +24,11 @@ android {
         google()  // Google's Maven repository
         maven {url 'http://developer.huawei.com/repo/'}
 
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
