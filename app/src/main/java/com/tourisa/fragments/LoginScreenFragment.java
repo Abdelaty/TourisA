@@ -1,4 +1,4 @@
-package com.tourisa;
+package com.tourisa.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,6 +24,7 @@ import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.tourisa.R;
 
 import org.json.JSONException;
 

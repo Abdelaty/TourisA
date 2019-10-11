@@ -39,7 +39,7 @@
                 android:value="androidhwext:style/Theme.Emui.Translucent" />
         </activity>
 
-        <activity android:name=".WeclomeActivity">
+        <activity android:name=".activities.WelcomeActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,6 +69,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.SplashActivity" />
 
         <provider
             android:name="com.huawei.hms.update.provider.UpdateProvider"

@@ -1,4 +1,4 @@
-package com.tourisa;
+package com.tourisa.activities;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -13,10 +13,15 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.tourisa.R;
+import com.tourisa.fragments.MainLoginFragment;
+import com.tourisa.helpers.PrefManager;
+import com.tourisa.helpers.StaticMembers;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class WeclomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
 
 
     public static void printHashKey(Context pContext) {
@@ -40,7 +45,9 @@ public class WeclomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //dit this
-        setContentView(R.layout.welcome);
+        setContentView(R.layout.activity_welcome);
+        if (PrefManager.getInstance(getBaseContext()).hasToken())
+            StaticMembers.startActivityOverAll(WelcomeActivity.this, MainActivity.class);
         printHashKey(this);
         loadFragment(new MainLoginFragment());
 
