@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.tourisa.R;
+import com.tourisa.R;
 
 public class MainActivity extends AppCompatActivity {
 
