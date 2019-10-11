@@ -4,7 +4,16 @@
     package="com.tourisa">
 
     <dist:module dist:instant="true" />
-
+    <!--To upgrade HMS through HMS-SDK, OTA server access permission is required.-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--HMS upgrade through HMS-SDK. To save a downloaded upgrade package, SD card write permission is required.-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--Test network status-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--Test wifi status-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--To get the IMEI, the unique user ID, from the user phone. -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,13 +21,73 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.huawei.hms.activity.BridgeActivity"
+            android:configChanges="orientation|locale|screenSize|layoutDirection|fontScale"
+            android:excludeFromRecents="true"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent">
+            <meta-data
+                android:name="hwc-theme"
+                android:value="androidhwext:style/Theme.Emui.Translucent" />
+
+        </activity>
+
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
     </application>
 
 </manifest>
+
+    <!-- 接入HMSSDK 需要注册的activity | Access HMSSDK activity to be registered-->
+
+
+    <!-- 接入HMSSDK 需要注册的activity | Access HMSSDK activity to be registered-->
+
+    <!-- 接入HMSSDK 游戏需要注册的activity | Activity to register when accessing HMSSDK game module using hmsagent code-->
+
+
+    <!-- 接入HMSSDK PUSH模块需要注册，第三方相关 :接收Push消息（注册、透传消息、通知栏点击事件）广播，
+            此receiver类需要开发者自己创建并继承com.huawei.hms.support.api.push.PushReceiver类，
+            参考示例代码中的类：com.huawei.hmsagent.HuaweiPushRevicer
+    com.tourisa 要替换上您应用的包名-->
+
+    <!--如下2个通知会在以后的版本中逐渐废弃
+        接入HMSSDK PUSH模块需要注册，第三方相关 :接收Push消息（点击通知栏或通知栏上的按钮后触发onEvent回调、查看push通道是否连接）广播，
+            此receiver类需要开发者自己创建并继承com.huawei.hms.support.api.push.PushReceiver类，
+            参考示例代码中的类：com.huawei.hmsagent.HuaweiPushRevicer
+    com.tourisa 要替换上您应用的包名-->
+
+    <!--接入HMSSDK PUSH模块需要注册该service，不需要开发者处理-->
+
+
+    <!-- 接入HMSSDK 需要注册的应用下载服务 | Access HMSSDK need to register app download service-->

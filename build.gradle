@@ -24,6 +24,8 @@ allprojects {
         maven {
             url 'http://developer.huawei.com/repo/'
         }
+        mavenCentral()
+
     }
 }
 

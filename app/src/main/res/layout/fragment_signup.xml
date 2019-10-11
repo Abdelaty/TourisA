@@ -8,24 +8,23 @@
     android:paddingRight="40dp">
 
     <ImageView
-        android:id="@+id/google."
+        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toEndOf="@+id/facebook_login_button"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@+id/register_btn"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/gmail" />
 
     <ImageView
-        android:id="@+id/facebook_login_button"
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/register_btn"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/fb" />
 
@@ -33,16 +32,17 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="39dp"
         android:fontFamily="@font/tunga"
         android:gravity="center"
         android:letterSpacing="0.2"
         android:maxLines="1"
-        android:text="LOGIN"
+        android:text="CREATE ACCOUNT"
         android:textColor="@android:color/black"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,41 +53,57 @@
 
         android:layout_height="0dp"
 
-        android:layout_marginTop="508dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/radius"
         android:fontFamily="@font/bolditalic"
-        android:text="Login"
+        android:text="Sign-up"
         android:textAllCaps="false"
         android:textColor="#f79751"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
+        android:drawableLeft="@drawable/ic_manuser"
+        android:ems="10"
+        android:hint="USERNAME"
+        android:inputType="textPersonName"
+        android:letterSpacing="0.6"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_sentmail"
         android:ems="10"
         android:hint="EMAIL ADDRESS"
         android:inputType="textPersonName"
         android:letterSpacing="0.6"
         android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_lock"
         android:ems="10"
         android:hint="PASSWORD"
@@ -96,7 +112,7 @@
         android:letterSpacing="0.6"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="@+id/editText2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -105,7 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="LOGIN WITH"
+        android:text="SIGNUP WITH"
         app:layout_constraintStart_toStartOf="@+id/editText3"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
@@ -113,19 +129,19 @@
         android:id="@+id/huawi_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toEndOf="@+id/google."
-        app:layout_constraintTop_toTopOf="@+id/facebook_login_button"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
         app:srcCompat="@drawable/hua" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="By clicking the Sign Up button, you agree to our  Terms and Conditions, and Privacy Policy."
         android:textColor="@android:color/white"
@@ -134,12 +150,11 @@
         app:layout_constraintTop_toBottomOf="@+id/register_btn" />
 
     <com.facebook.login.widget.LoginButton
-        android:id="@+id/facebook_login_draft_button"
-        android:layout_width="0dp"
-        android:layout_height="71dp"
+        android:id="@+id/facebook_signup_draft_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/google." />
+        app:layout_constraintStart_toStartOf="@+id/textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
