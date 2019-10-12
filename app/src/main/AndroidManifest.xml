@@ -14,6 +14,22 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!--To get the IMEI, the unique user ID, from the user phone. -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <permission
+        android:name="com.tourisa.permission.PROCESS_PUSH_MSG"
+        android:protectionLevel="signature" />
+    <!--To receive PUSH TOKEN broadcast and PUSH messages, this permission must be defined. Replace ${PACKAGE_NAME} with your app package name -->
+    <uses-permission android:name="com.tourisa.permission.PROCESS_PUSH_MSG" />
+
+    <permission
+        android:name="com.tourisa.permission.PUSH_PROVIDER"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.tourisa.permission.PUSH_WRITE_PROVIDER"
+        android:protectionLevel="signature" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -179,6 +195,29 @@
         <service
             android:name="com.huawei.updatesdk.service.deamon.download.DownloadService"
             android:exported="false" />
+
+        <provider
+            android:name="com.huawei.hms.support.api.push.PushProvider"
+            android:authorities="com.tourisa.huawei.push.provider"
+            android:exported="true"
+            android:permission="com.tourisa.permission.PUSH_PROVIDER"
+            android:readPermission="com.tourisa.permission.PUSH_PROVIDER"
+            android:writePermission="com.tourisa.permission.PUSH_WRITE_PROVIDER" /><!-- App download service -->
+        <service
+            android:name="com.huawei.updatesdk.service.deamon.download.DownloadService"
+            android:exported="false" />
+        <receiver
+            android:name="com.tourisa.activities.MainActivity"
+            android:permission="com.tourisa.permission.PROCESS_PUSH_MSG">
+            <intent-filter>
+                <!-- Mandatory, used to receive tokens -->
+                <action android:name="com.huawei.android.push.intent.REGISTRATION" />
+                <!-- Mandatory, used to receive transparent messages -->
+                <action android:name="com.huawei.android.push.intent.RECEIVE" />
+                <!-- Mandatory, used to receive notification touch events. You only need to register the events. -->
+                <action android:name="com.huawei.intent.action.PUSH_DELAY_NOTIFY" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

@@ -9,14 +9,16 @@ buildscript {
         maven { url 'http://repo1.maven.org/maven2' }
         maven { url 'https://jitpack.io' }
         maven { url 'https://maven.fabric.io/public' }
-//        maven {
-//            url 'http://developer.huawei.com/repo/'
-//        }
+        maven {
+            url 'http://developer.huawei.com/repo/'
+        }
+        maven { url 'http://maven.huawei.com' }
     }
     dependencies {
         classpath 'com.google.gms:google-services:4.3.2'
         classpath 'com.android.tools.build:gradle:3.5.1'
         classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
+        classpath 'com.huawei.agconnect:agcp:1.0.0.300'
     }
 }
 
